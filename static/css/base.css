@@ -1,0 +1,9 @@
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(89,9,121,1) 45%, rgba(0,212,255,1) 100%);
+}
+
+.heading1 {
+    color: #ffffff;
+
+}
