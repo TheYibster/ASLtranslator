@@ -4,5 +4,6 @@ from translator import views
 
 urlpatterns = [
     path("", views.home, name = "home"),
+    path("pogtranslator/", views.livecam, name = "livecam"),
     
 ]

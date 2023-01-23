@@ -8,12 +8,16 @@ import threading
 
 @gzip_page
 def home(request):
+    return render(request, 'translator/home.html', context={})
+
+def livecam(request):
     try:
         cam = VideoCamera()
         return StreamingHttpResponse(gen(cam), content_type="multipart/x-mixed-replace;boundary=frame")
     except:
         pass
     return render(request, 'translator/home.html', context={})
+    
 
 class VideoCamera(object):
     def __init__(self):
