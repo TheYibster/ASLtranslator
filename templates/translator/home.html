@@ -38,24 +38,12 @@
                 <h4>2. Try it!</h4>
                 <div class="container">
                     <h1>ASL to English Translator</h1>
-                    <div class="file-input" id="file-input">
-                        <i class="fas fa-video"></i>
-                        <p>Upload Your Video Here</p>
+                    <div class="container">
+                        <p style="font-size: 25px;">Try the Live Feed!</p>
+                        <a href="{% url 'livecam'%}">
+                            <span class="link"></span>
                     </div>
-                    <video class="video-input" id="input-video" autoplay></video>
-                    <textarea class="output-text" id="output-text" disabled></textarea>
                 </div>
-                <script>
-                    const fileInput = document.getElementById("file-input");
-                    const inputVideo = document.getElementById("input-video");
-                    const outputText = document.getElementById("output-text");
-
-                    fileInput.addEventListener("click", function () {
-                        setInterval(function () {
-                            outputText.value = "Translated: Hello";
-                        }, 1000);
-                    });
-                </script>
 
                 <h4>3. Dataset description.</h4>
                 <p>The model is trained based on the following <a href="https://www.kaggle.com/datasets/grassknoted/asl-alphabet" target="_blank">dataset</a></p>
