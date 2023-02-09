@@ -1,50 +1,68 @@
 <!DOCTYPE html>
+
 {% load static %}
 
 <html lang="en">
-
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ASLtranslator</title>
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/translator.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/page.css' %}" />
+        <!-- <link rel="stylesheet" href="../../static/css/base.css" /> -->
     </head>
 
     <body>
-        <div class="heading1">
-            <h1 style="font-size:48px;">ASLtranslator(maybe change it to a name or sth?)</h1>
-            <p style="font-size:20px;"> <a href="//en.wikipedia.org/wiki/American_Sign_Language" target="_blank">American Sign Language (ASL)</a> 
-                is a natural language expressed by both manual and nonmanual features, which serves as 
-                the predominant sign language of deaf community in U.S. and Canada. ASL has a set of 
-                <a href="https://en.wikipedia.org/wiki/American_manual_alphabet" target="_blank">American manual alphabet</a>
-                , containing 26 signs, which can be used to spell out words from the English language. <br />
-                <img src="images/American_manual_alphabet.jpeg" title="American_manual_alphabet" width="900"> 
-            </p>
+        <div class="page">
+            <div class="Title">
+                <h1>ASLtranslator</h1>
+            </div>
 
-            <h2 style="color:rgb(98, 0, 255); font-size:32px;">About our translator</h2>
-            <p style="font-size:20px;"><a href="#Idea">1. The Idea</a></p>
-            <p style="font-size:20px;"></p><a href="{% url 'livecam' %}">2. Try it!</a></p>
-            <p style="font-size:20px;"><a href="#dataset">3. Dataset description</a></p>
-            <p style="font-size:20px;"><a href="#github">4. Github</a></p>
-            <!-- maybe several more tags -->
-            <br/>
-            <h3 id="idea" style="font-size:26px;">The Idea</h3>
-                ......
-            <h3 id="dataset" style="font-size:26px;">Dataset</h3>
-            The model is trained based on the following  
-            <a href="https://www.kaggle.com/datasets/grassknoted/asl-alphabet" target="_blank">dataset</a>
-            <h3 id="github" style="font-size:26px;">Github</h3>
-                <a href="https://github.com/TheYibster/ASLtranslator" target="_blank">our Github page</a>
-            
-            
-            <!-- short introduction to asl language -->
-            <!-- brief introduction to what does the translator does -->
-            <!-- dataset description -->
-            <!-- the github page -->
-           
+            <div class="Introduction">
+                <p>
+                    <a href="//en.wikipedia.org/wiki/American_Sign_Language" target="_blank">American Sign Language (ASL)</a>
+                    is a natural language expressed by both manual and nonmanual features, which serves as the predominant sign language of deaf community in U.S. and Canada. ASL has a set of
+                    <a href="https://en.wikipedia.org/wiki/American_manual_alphabet" target="_blank">American manual alphabet</a>
+                    , containing 26 signs, which can be used to spell out words from the English language. <br />
+                </p>
+                <img src="images/American_manual_alphabet.jpeg" title="American_manual_alphabet" width="900" />
+            </div>
 
+            <div class="main">
+                <h2>About our translator</h2>
 
+                <h4>1. The Idea</h4>
+                <p>lololol</p>
+
+                <h4>2. Try it!</h4>
+                <div class="container">
+                    <h1>ASL to English Translator</h1>
+                    <div class="file-input" id="file-input">
+                        <i class="fas fa-video"></i>
+                        <p>Upload Your Video Here</p>
+                    </div>
+                    <video class="video-input" id="input-video" autoplay></video>
+                    <textarea class="output-text" id="output-text" disabled></textarea>
+                </div>
+                <script>
+                    const fileInput = document.getElementById("file-input");
+                    const inputVideo = document.getElementById("input-video");
+                    const outputText = document.getElementById("output-text");
+
+                    fileInput.addEventListener("click", function () {
+                        setInterval(function () {
+                            outputText.value = "Translated: Hello";
+                        }, 1000);
+                    });
+                </script>
+
+                <h4>3. Dataset description.</h4>
+                <p>The model is trained based on the following <a href="https://www.kaggle.com/datasets/grassknoted/asl-alphabet" target="_blank">dataset</a></p>
+
+                <h4>4. Github</h4>
+                <p><a href="https://github.com/TheYibster/ASLtranslator" target="_blank">Our Github page</a></p>
+            </div>
         </div>
     </body>
 </html>
