@@ -20,7 +20,7 @@ def predict(frame, signNet):
 	return pred
 
 
-signNet = load_model("ASLtoEnglish\ModelTraining\Model_asl.model")
+signNet = load_model("ASLtoEnglish\ModelTraining\Model_asl2.model")
 
 # initialize the video stream
 print("[INFO] starting video stream...")
@@ -43,7 +43,7 @@ while True:
 		if 1 in list(list(pred)[0]):
 			label = label_map[list(list(pred)[0]).index(1)]
 		else:
-			label = "nothing"
+			label = "null"
 
 		# display the label and bounding box rectangle on the output
 		# frame
