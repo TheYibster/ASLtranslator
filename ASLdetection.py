@@ -20,7 +20,7 @@ def predict(frame, signNet):
 	return pred
 
 
-signNet = load_model("ASLtoEnglish\ModelTraining\Model_asl2.model")
+signNet = load_model(".\ModelTraining\Model_asl_dense_nospin.model")
 
 # initialize the video stream
 print("[INFO] starting video stream...")
@@ -47,7 +47,7 @@ while True:
 
 		# display the label and bounding box rectangle on the output
 		# frame
-		cv2.putText(frame, label, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255, 255, 255), 2)
+		cv2.putText(frame, label, (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 0), 2)
 		
 	# show the output frame
 	cv2.imshow("Frame", frame)
